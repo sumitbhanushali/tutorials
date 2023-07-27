@@ -16,7 +16,7 @@ try {
     //key, error_rate, capacity
     //error rate should be between 0 and 1, 0.01 means false positive 1 in 100
     //capacity is number of entries that can be stored
-    await client.bf.reserve('username-bloom-filter', 0.01, 1000);
+    await client.bf.reserve(bfKey, 0.01, 1000);
     console.log('Reserved Bloom Filter.');
 } catch (e) {
     if (e.message.endsWith('item exists')) {
